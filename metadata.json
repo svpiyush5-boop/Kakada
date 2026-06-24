@@ -1,0 +1,8 @@
+{
+  "name": "Kakada Ramprasad",
+  "description": "Where Tradition Meets Taste - A digital menu and history of Chennai's beloved sweet and savoury destination since 1956.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

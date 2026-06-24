@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-kr-red: #C41E3A;
+  --color-kr-red-deep: #8B1528;
+  --color-kr-gold: #D4A853;
+  --color-kr-gold-light: #E8C97A;
+  --color-kr-cream: #FFF8F0;
+  --color-kr-cream-dark: #F0E6D3;
+  --color-kr-dark: #0a0604;
+  --color-kr-dark-warm: #1a0f08;
+  --color-kr-brown: #3d2b1f;
+  --color-kr-text-light: #f5efe6;
+  --color-kr-text-muted: #b8a99a;
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-garamond: "Cormorant Garamond", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    background-color: var(--color-kr-dark);
+    color: var(--color-kr-text-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Base custom animations */
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(196,30,58,0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(196,30,58,0.6); }
+}
+
+@keyframes loadBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; height: 40px; }
+  50% { opacity: 0.4; height: 25px; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-logoPulse {
+  animation: logoPulse 1.5s ease-in-out infinite;
+}
+.animate-loadBar {
+  animation: loadBar 2s ease-in-out forwards;
+}
+.animate-scrollPulse {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-statusPulse {
+  animation: pulse 2s infinite;
+}
